@@ -24,49 +24,49 @@ debug:disable_logs = true
 # Execute your favorite apps at launch
 
 $scrPath = ~/.config/hyprdots/scripts
-# exec-once = uwsm app -- /usr/lib/polkit-kde-authentication-agent-1
-exec-once = uwsm app -- /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
-exec-once = uwsm app -- fcitx5 -d 
-exec-once = uwsm app -- systemctl --user start hyprpolkitagent 
-exec-once = uwsm app -- sway-audio-idle-inhibit 
-# exec-once = uwsm app -- swww-daemon 
-# exec-once = uwsm app -- swayidle -w timeout 1200 'swaylock -f -c 000000' timeout 610 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' timeout 18000 'systemctl suspend' before-sleep 'gtklock' 
-exec-once = uwsm app -- wl-clip-persist --clipboard regular 
-# exec-once = uwsm app -- wl-paste --primary --watch wl-copy 
-exec-once = uwsm app -- hyprpanel 
-exec-once = uwsm app -- hypridle  
-# exec-once = uwsm app -- $scrPath/resetxdgportal.sh  # reset XDPH for screenshare
-# exec-once = uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP  # for XDPH
-# exec-once = uwsm app -- dbus-update-activation-environment --systemd --all  # for XDPH
-# exec-once = uwsm app -- systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP  # for XDPH
-# exec-once = uwsm app -- clipse -listen # run listener on startup
+# exec-once = /usr/lib/polkit-kde-authentication-agent-1
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec-once = systemctl --user start hyprpolkitagent
+exec-once = fcitx5 -d
+exec-once = sway-audio-idle-inhibit
+exec-once = swww-daemon
+# exec-once = swayidle -w timeout 1200 'swaylock -f -c 000000' timeout 610 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' timeout 18000 'systemctl suspend' before-sleep 'gtklock' &
+exec-once = wl-clip-persist --clipboard regular &
+# exec-once = wl-paste --primary --watch wl-copy &
+exec-once = hyprpanel &
+exec-once = hypridle &
+exec-once = $scrPath/resetxdgportal.sh # reset XDPH for screenshare
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP # for XDPH
+exec-once = dbus-update-activation-environment --systemd --all # for XDPH
+exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP # for XDPH
+# exec-once = clipse -listen # run listener on startup
 # launch the system panel
-# exec-once = uwsm app -- pot
-# exec-once = uwsm app -- eww daemon
-exec-once = uwsm app -- nm-applet --indicator  # systray app for Network/Wifi
-# exec-once = uwsm app -- dunst # start notification demon
-exec-once = uwsm app -- clash-verge
-exec-once = uwsm app -- copyq --start-server 
-# exec-once = uwsm app -- QT_SCALE_FACTOR=1.2 vicinae server
+# exec-once = pot
+# exec-once = eww daemon
+exec-once = nm-applet --indicator # systray app for Network/Wifi
+# exec-once = dunst # start notification demon
+exec-once = clash-verge
+exec-once = copyq --start-server
+exec-once = QT_SCALE_FACTOR=1.2 vicinae server
 
 
-# exec-once = uwsm app -- $scrPath/swwwallpaper.sh # start wallpaper daemon
-exec-once = uwsm app -- $scrPath/batterynotify.sh  # battery notification
-exec-once = uwsm app -- blueman-applet 
-# exec-once = uwsm app -- hypridle 
-# exec-once = uwsm app -- wechat 
-exec-once = uwsm app -- wireplumber 
-exec-once = uwsm app -- pipewire-pulse 
-exec-once = uwsm app -- ~/.autostart 
-exec-once = uwsm app -- wlsunset -t 4500 -S 9:00 -s 19:30 
-# exec-once = uwsm app -- systemctl --user restart pipewire # 已注释：无需重复重启 pipewire
-exec-once = uwsm app -- QT_QPA_PLATFORM=wayland-egl Telegram 
-exec-once = uwsm app -- virt-manager 
-exec-once = uwsm app -- evolution 
-exec-once = uwsm app -- udiskie  
-exec-once = uwsm app -- hyprpm reload -n 
-# exec-once = uwsm app -- mpvpaper -o "no-audio --loop-playlist shuffle" ALL ~/Downloads/3578881-uhd_3840_2160_30fps.mp4
-exec-once = uwsm app -- swaybg -i ~/Pictures/wallpapers/variety-copied-wallpaper-c8d26b6ad842d689ee6764c68ed02d35.jpg 
+# exec-once = $scrPath/swwwallpaper.sh # start wallpaper daemon
+exec-once = $scrPath/batterynotify.sh # battery notification
+exec-once = blueman-manager &
+# exec-once = hypridle
+# exec-once = wechat &
+exec-once = wireplumber
+exec-once = pipewire-pulse
+exec-once = ~/.autostart
+exec-once = wlsunset -t 4500 -S 9:00 -s 19:30
+exec-once = systemctl --user restart pipewire
+exec-once = QT_QPA_PLATFORM=wayland-egl Telegram &
+exec-once = virt-manager &
+exec-once = evolution &
+exec-once = udiskie &
+exec-once = hyprpm reload -n
+# exec-once = mpvpaper -o "no-audio --loop-playlist shuffle" ALL ~/Downloads/3578881-uhd_3840_2160_30fps.mp4
+exec-once = swaybg -i ~/Pictures/wallpapers/variety-copied-wallpaper-c8d26b6ad842d689ee6764c68ed02d35.jpg
 
 # █▀▀ █▄░█ █░█
 # ██▄ █░▀█ ▀▄▀
